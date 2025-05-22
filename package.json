@@ -1,0 +1,15 @@
+{
+  "name": "express-blog-intro",
+  "version": "1.0.0",
+  "description": "Task 22/05/2025",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js"
+  },
+  "type": "module",
+  "author": "Matteo Albertini",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
