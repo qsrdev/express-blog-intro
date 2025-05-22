@@ -1,4 +1,5 @@
 import express from "express";
+import fs from "fs";
 import chalk from "chalk";
 
 //facendo così creiamo l'applicazione web tramite express
@@ -59,6 +60,25 @@ app.get("/bacheca", (req, res) => {
   };
 
   res.json(postData);
+});
+
+app.get("/bacheca2", (req, res) => {
+  const dataJson = fs.readFileSync("./data/consoles.json");
+  const consoles = JSON.parse(dataJson);
+
+  let postCount = 0;
+  //quindi i cicli funzionano anche dentro al json parsato
+  for (const post of consoles) {
+    postCount++;
+  }
+
+  const resData = {
+    numberofposts: postCount,
+    data: consoles,
+    success: true,
+  };
+
+  res.json(resData);
 });
 
 //Invoco la funzione di ascolto
