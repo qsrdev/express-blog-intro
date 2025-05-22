@@ -1,4 +1,5 @@
 import express from "express";
+import chalk from "chalk";
 
 //facendo così creiamo l'applicazione web tramite express
 const app = express();
@@ -13,5 +14,5 @@ app.get("/", (req, res) => {
 
 //Invoco la funzione di ascolto
 app.listen(port, () => {
-  console.log("Server sul retrogame in ascolto");
+  console.log(chalk.bgGreen("Server sul retrogame in ascolto"));
 });
